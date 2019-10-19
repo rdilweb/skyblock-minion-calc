@@ -3,7 +3,7 @@ import BasicExplanation from "./components/BasicExplanation"
 import WebFont from "webfontloader"
 import NavigationBar from "./components/NavigationBar"
 
-function App() {
+export default props => {
   WebFont.load({
     google: {
       families: ["Roboto"]
@@ -18,5 +18,3 @@ function App() {
     </div>
   )
 }
-
-export default App

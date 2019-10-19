@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "prettier": "prettier --write **/**.{js,html,css}"
+    "prettier": "prettier --write **/**.{js,html,css}",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "husky": ">=1",
     "lint-staged": ">=8",
     "prettier": "^1.18.2"
@@ -49,5 +52,8 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "homepage": "https://skyblock-minions.rdil.rocks",
+  "author": "Reece Dunham",
+  "license": "Apache 2"
 }

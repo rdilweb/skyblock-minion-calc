@@ -1,0 +1,11 @@
+deploy_task:
+  only_if: $CIRRUS_BRANCH == "master"
+  container:
+    image: node:latest
+  yarn_cache:
+    folder: node_modules
+    fingerprint_script: |
+      cat package.json
+      cat yarn.lock
+    populate_script: yarn
+  deploy_script: yarn deploy
