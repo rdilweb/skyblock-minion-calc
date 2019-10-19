@@ -8,4 +8,7 @@ deploy_task:
       cat package.json
       cat yarn.lock
     populate_script: yarn
-  deploy_script: yarn deploy
+  deploy_script: |
+    git config user.name "Cirrus CI"
+    git config user.email "support@rdil.rocks"
+    yarn deploy
