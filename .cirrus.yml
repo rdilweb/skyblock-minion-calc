@@ -14,5 +14,5 @@ deploy_task:
     git config user.name "Cirrus CI"
     git config user.email "support@rdil.rocks"
     git remote rm origin
-    git remote add origin ${DEPLOY_TOKEN}@github.com/RDIL/skyblock-minion-calc
+    git remote add origin ${DEPLOY_TOKEN}@github.com/RDIL/skyblock-minion-calc.git
     yarn deploy
