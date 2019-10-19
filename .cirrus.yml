@@ -15,6 +15,7 @@ deploy_task:
     git config user.name "Cirrus CI"
     git config user.email "support@rdil.rocks"
     eval "$(ssh-agent -s)"
+    mkdir ~/.ssh
     echo ${SSH_DEPLOY_KEY} > ~/.ssh/id_rsa
     ssh-add -K ~/.ssh/id_rsa
     git remote rm origin
