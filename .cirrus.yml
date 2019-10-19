@@ -3,7 +3,7 @@ deploy_task:
   container:
     image: node:latest
   env:
-    DEPLOY_TOKEN: ENCRYPTED[21b52462011614b3f9314671bb4a5169fd9b0b89362e2187789e4e21f6b098475e3d8116bbee87a68441c6d713831047]
+    DEPLOY_TOKEN: ENCRYPTED[d0b60a11a693454be3eaffcf678f90d6d574902d85ae22432e8c5017181c6e45ee10bf56041ab3af605e39c1d7f6274e]
   yarn_cache:
     folder: node_modules
     fingerprint_script: |
