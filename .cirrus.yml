@@ -2,6 +2,8 @@ deploy_task:
   only_if: $CIRRUS_BRANCH == "master"
   container:
     image: node:latest
+  env:
+    DEPLOY_TOKEN: ENCRYPTED[21b52462011614b3f9314671bb4a5169fd9b0b89362e2187789e4e21f6b098475e3d8116bbee87a68441c6d713831047]
   yarn_cache:
     folder: node_modules
     fingerprint_script: |
@@ -11,4 +13,6 @@ deploy_task:
   deploy_script: |
     git config user.name "Cirrus CI"
     git config user.email "support@rdil.rocks"
+    git remove rm origin
+    git remote add origin ${DEPLOY_TOKEN}@github.com/RDIL/skyblock-minion-calc
     yarn deploy
