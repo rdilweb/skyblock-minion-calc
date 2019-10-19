@@ -4,6 +4,7 @@ deploy_task:
     image: node:latest
   env:
     DEPLOY_TOKEN: ENCRYPTED[d0b60a11a693454be3eaffcf678f90d6d574902d85ae22432e8c5017181c6e45ee10bf56041ab3af605e39c1d7f6274e]
+    SSH_DEPLOY_KEY: ENCRYPTED[9edd2d42156e755e37f8d50b44217ac6f427a251a27cf76223d36d7a45d6c244abfee007ebb5510d2f0600f2e434a538]
   yarn_cache:
     folder: node_modules
     fingerprint_script: |
@@ -13,6 +14,10 @@ deploy_task:
   deploy_script: |
     git config user.name "Cirrus CI"
     git config user.email "support@rdil.rocks"
+    eval "$(ssh-agent -s)"
+    echo ${SSH_DEPLOY_KEY} > ~/.ssh/id_rsa
+    ssh-add -K ~/.ssh/id_rsa
     git remote rm origin
-    git remote add origin RDIL:${DEPLOY_TOKEN}@github.com/RDIL/skyblock-minion-calc.git
+    git remote add origin git@github.com:rdil/skyblock-minion-calc.git
+    # git remote add origin https://${DEPLOY_TOKEN}github.com/RDIL/skyblock-minion-calc.git
     yarn deploy
