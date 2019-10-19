@@ -11,10 +11,8 @@ deploy_task:
       cat yarn.lock
     populate_script: yarn
   deploy_script: |
-    ssh-keygen -R github.com
-    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
     git config user.name "Cirrus CI"
     git config user.email "support@rdil.rocks"
     git remote rm origin
-    git remote add origin ${DEPLOY_TOKEN}@github.com:RDIL/skyblock-minion-calc.git
+    git remote add origin RDIL:${DEPLOY_TOKEN}@github.com/RDIL/skyblock-minion-calc.git
     yarn deploy
