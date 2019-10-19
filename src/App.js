@@ -1,7 +1,7 @@
 import React from "react"
-import "./App.css"
 import BasicExplanation from "./components/BasicExplanation"
 import WebFont from "webfontloader"
+import NavigationBar from "./components/NavigationBar"
 
 function App() {
   WebFont.load({
@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Skyblock Minion Cost Calculator</h1>
-        <BasicExplanation />
+        <NavigationBar />
       </header>
+      <BasicExplanation />
     </div>
   )
 }

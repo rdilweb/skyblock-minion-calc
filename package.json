@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
@@ -31,9 +32,22 @@
     ]
   },
   "devDependencies": {
+    "husky": ">=1",
+    "lint-staged": ">=8",
     "prettier": "^1.18.2"
   },
   "prettier": {
     "semi": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
