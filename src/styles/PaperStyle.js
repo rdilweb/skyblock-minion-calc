@@ -1,4 +1,4 @@
 export default {
-  padding: "40px",
-  margin: "15px"
+    padding: "40px",
+    margin: "15px"
 }

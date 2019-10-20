@@ -1,14 +1,14 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Roboto";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Roboto";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 body {
-  background-color: lightgray;
+    background-color: lightgray;
 }

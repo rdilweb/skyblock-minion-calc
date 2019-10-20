@@ -5,25 +5,25 @@ import Minions from "../dataclasses/Minions"
 import { makeStyles } from "@material-ui/core/styles"
 
 export default props => {
-  const useStyles = makeStyles(theme => ({
-    button: {
-      display: "block",
-      marginTop: theme.spacing(2)
-    },
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120
-    }
-  }))
+    const useStyles = makeStyles(theme => ({
+        button: {
+            display: "block",
+            marginTop: theme.spacing(2)
+        },
+        formControl: {
+            margin: theme.spacing(1),
+            minWidth: 120
+        }
+    }))
 
-  const [minionName, setMinionName] = React.useState("")
+    const [minionName, setMinionName] = React.useState("")
 
-  let handleOnChange = e => setMinionName(e.target.value)
+    let handleOnChange = e => setMinionName(e.target.value)
 
-  return (
-    <form autoComplete="off">
-      <InputLabel htmlFor="minionSelectComp">Minion Type</InputLabel>
-      <Select onChange={handleOnChange} value={minionName}></Select>
-    </form>
-  )
+    return (
+        <form autoComplete="off">
+            <InputLabel htmlFor="minionSelectComp">Minion Type</InputLabel>
+            <Select onChange={handleOnChange} value={minionName}></Select>
+        </form>
+    )
 }
