@@ -16,7 +16,8 @@
         "test": "react-scripts test",
         "prettier": "prettier --write **/**.{js,html,css}",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d build",
+        "deploy-clean": "gh-pages-clean"
     },
     "eslintConfig": {
         "extends": "react-app"
