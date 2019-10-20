@@ -9,3 +9,18 @@ test_task:
         cat yarn.lock
       populate_script: yarn
   test_script: yarn test
+
+deploy_task:
+  container:
+    image: node:latest
+  always:
+    yarn_cache:
+      folder: node_modules
+      fingerprint_script: |
+        cat package.json
+        cat yarn.lock
+      populate_script: yarn
+  deploy_script: |
+    git config user.name "Cirrus CI"
+    git config user.email "support@rdil.rocks"
+    yarn deploy
