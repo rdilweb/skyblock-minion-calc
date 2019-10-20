@@ -9,6 +9,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props)
+    this.showDrawer = false
     this.classes = makeStyles(theme => ({
       root: {
         flexGrow: 1
@@ -20,6 +21,15 @@ class NavigationBar extends React.Component {
         flexGrow: 1
       }
     }))
+    this.state = {
+      showDrawer: false
+    }
+  }
+
+  toggleDrawer() {
+    this.setState({
+      showDrawer: true
+    })
   }
 
   render() {
@@ -27,14 +37,23 @@ class NavigationBar extends React.Component {
       <div className={this.classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
-              edge="start"
-              className={this.classes.menuButton}
-              color="inherit"
-              aria-label="menu"
+            <a
+              href="https://github.com/RDIL/skyblock-minion-calc"
+              target="_blank"
+              style={{
+                color: "inherit"
+              }}
+              rel="noopener noreferrer"
             >
-              <MenuIcon />
-            </IconButton>
+              <IconButton
+                edge="start"
+                className={this.classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              >
+                <MenuIcon />
+              </IconButton>
+            </a>
             <Typography variant="h6" className={this.classes.title}>
               Skyblock Minion Cost Calculator
             </Typography>
