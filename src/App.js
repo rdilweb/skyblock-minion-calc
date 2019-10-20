@@ -1,7 +1,7 @@
 import React from "react"
-import BasicExplanation from "./components/BasicExplanation"
 import WebFont from "webfontloader"
 import NavigationBar from "./components/NavigationBar"
+import MainPaperContainer from "./components/MainPaperContainer"
 
 export default props => {
     WebFont.load({
@@ -14,7 +14,7 @@ export default props => {
             <header className="App-header">
                 <NavigationBar />
             </header>
-            <BasicExplanation />
+            <MainPaperContainer />
         </div>
     )
 }
