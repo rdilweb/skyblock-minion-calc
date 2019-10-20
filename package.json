@@ -56,8 +56,5 @@
     },
     "homepage": "https://skyblock-minions.rdil.rocks",
     "author": "Reece Dunham",
-    "license": "Apache 2",
-    "jest": {
-        "verbose": true
-    }
+    "license": "Apache 2"
 }
