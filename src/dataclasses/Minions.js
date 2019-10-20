@@ -1,4 +1,4 @@
-const minions = {
+export default {
     cobblestone: "Cobblestone",
     wheat: "Wheat",
     carrot: "Carrot",
@@ -49,5 +49,3 @@ const minions = {
     savannah: "Acatia",
     jungle: "Jungle"
 }
-
-export default minions
