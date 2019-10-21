@@ -39,6 +39,8 @@ export default props => {
         )
     }
 
+    // yeah its kind of backwards, but who cares
+    let canSubmit = !(tier !== "" && minion !== "")
     let clearData = pushable => setResults(<div hidden />)
 
     return (
@@ -74,6 +76,7 @@ export default props => {
                             variant="contained"
                             className={classes.button}
                             onClick={doLogic}
+                            disabled={canSubmit}
                         >
                             Submit
                         </Button>
