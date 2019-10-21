@@ -40,7 +40,9 @@ export default props => {
                 <MenuItem value={Tiers.eight.toString()}>
                     {Tiers.eight.toString()}
                 </MenuItem>
-                <MenuItem value={Tiers.nine.toString()}>{Tiers.nine}</MenuItem>
+                <MenuItem value={Tiers.nine.toString()}>
+                    {Tiers.nine.toString()}
+                </MenuItem>
                 <MenuItem value={Tiers.ten.toString()}>
                     {Tiers.ten.toString()}
                 </MenuItem>
