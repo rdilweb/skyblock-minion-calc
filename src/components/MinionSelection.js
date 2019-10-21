@@ -3,20 +3,8 @@ import Select from "@material-ui/core/Select"
 import InputLabel from "@material-ui/core/InputLabel"
 import Minions from "../data/Minions"
 import MenuItem from "@material-ui/core/MenuItem"
-import { makeStyles } from "@material-ui/core/styles"
 
 export default props => {
-    const useStyles = makeStyles(theme => ({
-        button: {
-            display: "block",
-            marginTop: theme.spacing(2)
-        },
-        formControl: {
-            margin: theme.spacing(1),
-            minWidth: 120
-        }
-    }))()
-
     const [minionName, setMinionName] = React.useState("")
 
     let handleOnChange = e => {
@@ -26,12 +14,8 @@ export default props => {
 
     return (
         <form autoComplete="off">
-            <InputLabel htmlFor="minionSelectComp">Minion Type</InputLabel>
-            <Select
-                onChange={handleOnChange}
-                value={minionName}
-                style={useStyles}
-            >
+            <InputLabel>Minion Type</InputLabel>
+            <Select onChange={handleOnChange} value={minionName}>
                 <MenuItem value={Minions.cobblestone}>
                     {Minions.cobblestone}
                 </MenuItem>

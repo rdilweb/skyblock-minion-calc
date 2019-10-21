@@ -8,16 +8,13 @@ import MenuIcon from "@material-ui/icons/Menu"
 
 export default props => {
     const classes = makeStyles(theme => ({
-        root: {
-            flexGrow: 1
-        },
         title: {
             flexGrow: 0.96
         }
     }))()
 
     return (
-        <div className={classes.root}>
+        <div>
             <AppBar position="static">
                 <Toolbar>
                     <a

@@ -38,11 +38,7 @@ export default props => {
         )
     }
 
-    let clearData = pushable => {
-        setResults(<div hidden />)
-        setTier("")
-        setMinion("")
-    }
+    let clearData = pushable => setResults(<div hidden />)
 
     return (
         <div>

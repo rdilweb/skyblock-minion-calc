@@ -3,20 +3,8 @@ import Select from "@material-ui/core/Select"
 import { InputLabel } from "@material-ui/core"
 import Tiers from "../data/Tiers"
 import MenuItem from "@material-ui/core/MenuItem"
-import { makeStyles } from "@material-ui/core/styles"
 
 export default props => {
-    const useStyles = makeStyles(theme => ({
-        button: {
-            display: "block",
-            marginTop: theme.spacing(2)
-        },
-        formControl: {
-            margin: theme.spacing(1),
-            minWidth: 120
-        }
-    }))
-
     const [tier, setTier] = React.useState("")
 
     let handleOnChange = e => {
@@ -26,8 +14,8 @@ export default props => {
 
     return (
         <form autoComplete="off">
-            <InputLabel htmlFor="tierSelectComp">Tier</InputLabel>
-            <Select onChange={handleOnChange} value={tier} style={useStyles()}>
+            <InputLabel>Tier</InputLabel>
+            <Select onChange={handleOnChange} value={tier}>
                 <MenuItem value={Tiers.one}>{Tiers.one}</MenuItem>
                 <MenuItem value={Tiers.two}>{Tiers.two}</MenuItem>
                 <MenuItem value={Tiers.three}>{Tiers.three}</MenuItem>
