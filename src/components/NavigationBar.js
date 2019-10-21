@@ -17,7 +17,7 @@ export default props => {
         title: {
             flexGrow: 1
         }
-    }))
+    }))()
 
     return (
         <div className={classes.root}>
