@@ -1,4 +1,4 @@
-# SkyBlock Minion Cost Calculator
+# Skyblock Minion Cost Calculator
 
 This is a simple website that allows you to check how many of a certain item it will cost to upgrade your minion to a certain tier.
 
@@ -8,7 +8,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+To run these scripts you will need Yarn. You can find install instructions from [here](https://yarnpkg.com).
 In the project directory, you can run:
+
+### `yarn install`
+
+Fetch build dependencies from [npmjs](https://npmjs.com).
+Do this the first time you clone the repository, or if you are getting unknown module errors.
 
 ### `yarn start`
 
@@ -32,6 +38,10 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn prettier`
+
+Run [Prettier](https://prettier.io) on the code in the repository.
 
 ## Learn More
 
