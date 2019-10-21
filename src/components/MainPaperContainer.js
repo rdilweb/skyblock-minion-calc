@@ -9,6 +9,7 @@ import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
 import Delete from "@material-ui/icons/Delete"
+import Tooltip from "@material-ui/core/Tooltip"
 import { makeStyles } from "@material-ui/core/styles"
 
 export default props => {
@@ -55,24 +56,28 @@ export default props => {
                         notifyParentOfChange={change => setTier(change)}
                     />
                     {s}
-                    <Button
-                        startIcon={<Delete />}
-                        color="primary"
-                        variant="contained"
-                        classname={classes.button}
-                        onClick={clearData}
-                    >
-                        Clear
-                    </Button>
-                    <Button
-                        startIcon={<Input />}
-                        color="primary"
-                        variant="contained"
-                        className={classes.button}
-                        onClick={doLogic}
-                    >
-                        Submit
-                    </Button>
+                    <Tooltip title="Hide Result">
+                        <Button
+                            startIcon={<Delete />}
+                            color="primary"
+                            variant="contained"
+                            classname={classes.button}
+                            onClick={clearData}
+                        >
+                            Clear
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title="Calculate Cost...">
+                        <Button
+                            startIcon={<Input />}
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}
+                            onClick={doLogic}
+                        >
+                            Submit
+                        </Button>
+                    </Tooltip>
                     {s}
                     {results}
                     {s}
