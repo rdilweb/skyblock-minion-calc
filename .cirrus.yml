@@ -11,6 +11,7 @@ test_task:
   test_script: yarn test
 
 deploy_task:
+  only_if: $CIRRUS_BRANCH == 'master'
   env:
     DEPLOY_TOKEN: ENCRYPTED[d0b60a11a693454be3eaffcf678f90d6d574902d85ae22432e8c5017181c6e45ee10bf56041ab3af605e39c1d7f6274e]
   container:
