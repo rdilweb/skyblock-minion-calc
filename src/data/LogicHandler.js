@@ -2,6 +2,10 @@ import Tiers from "./Tiers"
 import Minions from "./Minions"
 import RomanNumeral from "js-roman-numerals"
 
+let woodMinions = {
+    I: 80
+}
+
 let machineMinionType = minionName => {
     switch (minionName) {
         case Minions.birch:
@@ -15,12 +19,10 @@ let machineMinionType = minionName => {
     }
 }
 
-function doStuff(p) {
-    return p // placeholder for now
-}
-
 export default (tier, minion) => {
     let minionAsInt = machineMinionType(minion)
-    let tierInt = new RomanNumeral(tier).toInt()
+    if (minionAsInt === 2) {
+        return woodMinions[new RomanNumeral(tier).toString()]
+    }
     return ""
 }
