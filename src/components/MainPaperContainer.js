@@ -69,17 +69,25 @@ export default props => {
                             Clear
                         </Button>
                     </Tooltip>
-                    <Tooltip title="Calculate Cost...">
-                        <Button
-                            startIcon={<Input />}
-                            color="primary"
-                            variant="contained"
-                            className={classes.button}
-                            onClick={doLogic}
-                            disabled={canSubmit}
-                        >
-                            Submit
-                        </Button>
+                    <Tooltip
+                        title={
+                            canSubmit
+                                ? "Calculate Cost..."
+                                : "Fill all fields first!"
+                        }
+                    >
+                        <span>
+                            <Button
+                                startIcon={<Input />}
+                                color="primary"
+                                variant="contained"
+                                className={classes.button}
+                                onClick={doLogic}
+                                disabled={canSubmit}
+                            >
+                                Submit
+                            </Button>
+                        </span>
                     </Tooltip>
                     {s}
                     {results}

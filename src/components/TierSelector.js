@@ -16,18 +16,40 @@ export default props => {
         <form autoComplete="off">
             <InputLabel>Tier</InputLabel>
             <Select onChange={handleOnChange} value={tier}>
-                <MenuItem value={Tiers.one}>{Tiers.one}</MenuItem>
-                <MenuItem value={Tiers.two}>{Tiers.two}</MenuItem>
-                <MenuItem value={Tiers.three}>{Tiers.three}</MenuItem>
-                <MenuItem value={Tiers.four}>{Tiers.four}</MenuItem>
-                <MenuItem value={Tiers.five}>{Tiers.five}</MenuItem>
-                <MenuItem value={Tiers.six}>{Tiers.six}</MenuItem>
-                <MenuItem value={Tiers.seven}>{Tiers.seven}</MenuItem>
-                <MenuItem value={Tiers.eight}>{Tiers.eight}</MenuItem>
-                <MenuItem value={Tiers.nine}>{Tiers.nine}</MenuItem>
-                <MenuItem value={Tiers.ten}>{Tiers.ten}</MenuItem>
-                <MenuItem value={Tiers.eleven}>{Tiers.eleven}</MenuItem>
-                <MenuItem value={Tiers.twelve}>{Tiers.twelve}</MenuItem>
+                <MenuItem value={Tiers.one.toString()}>
+                    {Tiers.one.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.two.toString()}>
+                    {Tiers.two.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.three.toString()}>
+                    {Tiers.three.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.four.toString()}>
+                    {Tiers.four.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.five.toString()}>
+                    {Tiers.five.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.six.toString()}>
+                    {Tiers.six.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.seven.toString()}>
+                    {Tiers.seven.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.eight.toString()}>
+                    {Tiers.eight.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.nine.toString()}>{Tiers.nine}</MenuItem>
+                <MenuItem value={Tiers.ten.toString()}>
+                    {Tiers.ten.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.eleven.toString()}>
+                    {Tiers.eleven.toString()}
+                </MenuItem>
+                <MenuItem value={Tiers.twelve.toString()}>
+                    {Tiers.twelve.toString()}
+                </MenuItem>
             </Select>
         </form>
     )
