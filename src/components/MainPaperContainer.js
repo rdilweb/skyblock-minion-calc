@@ -2,8 +2,8 @@ import React from "react"
 import Paper from "@material-ui/core/Paper"
 import CommonPaperStyle from "../styles/PaperStyle"
 import BasicExplanation from "./BasicExplanation"
-import TierSelector from "./TierSelector"
-import MinionSelector from "./MinionSelection"
+import TierSelector from "./selectors/TierSelector"
+import MinionSelector from "./selectors/MinionSelection"
 import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
@@ -51,11 +51,11 @@ export default props => {
                 <Card>
                     {s}
                     <TierSelector
-                        notifyParentOfChange={change => setMinion(change)}
+                        notifyParentOfChange={change => setTier(change)}
                     />
                     {s}
                     <MinionSelector
-                        notifyParentOfChange={change => setTier(change)}
+                        notifyParentOfChange={change => setMinion(change)}
                     />
                     {s}
                     <Tooltip title="Hide Result">
@@ -69,13 +69,7 @@ export default props => {
                             Clear
                         </Button>
                     </Tooltip>
-                    <Tooltip
-                        title={
-                            canSubmit
-                                ? "Calculate Cost..."
-                                : "Fill all fields first!"
-                        }
-                    >
+                    <Tooltip title="Calculate Cost...">
                         <span>
                             <Button
                                 startIcon={<Input />}

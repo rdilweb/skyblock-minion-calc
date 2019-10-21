@@ -1,7 +1,7 @@
 import React from "react"
 import Select from "@material-ui/core/Select"
 import InputLabel from "@material-ui/core/InputLabel"
-import Minions from "../data/Minions"
+import Minions from "../../data/Minions"
 import MenuItem from "@material-ui/core/MenuItem"
 
 export default props => {
