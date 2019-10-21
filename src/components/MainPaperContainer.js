@@ -3,9 +3,12 @@ import Paper from "@material-ui/core/Paper"
 import CommonPaperStyle from "../styles/PaperStyle"
 import BasicExplanation from "./BasicExplanation"
 import TierSelector from "./TierSelector"
+import MinionSelector from "./MinionSelection"
+import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
+import Delete from "@material-ui/icons/Delete"
 import { makeStyles } from "@material-ui/core/styles"
 
 export default props => {
@@ -16,6 +19,30 @@ export default props => {
     }))
     const s = <br />
     const classes = muiStyles()
+    // eslint-disable-next-line
+    const [minion, setMinion] = React.useState("")
+    // eslint-disable-next-line
+    const [tier, setTier] = React.useState("")
+    const [results, setResults] = React.useState(<div hidden />)
+
+    let doLogic = pushable => {
+        setResults(
+            <div>
+                {s}
+                <Typography variant="body2">
+                    Hello! This tool is sadly not done yet. It will work soon
+                    though! Do you know code? You can contribute by clicking the
+                    menu icon on the navigation bar up top!
+                </Typography>
+            </div>
+        )
+    }
+
+    let clearData = pushable => {
+        setResults(<div hidden />)
+        setTier("")
+        setMinion("")
+    }
 
     return (
         <div>
@@ -24,16 +51,34 @@ export default props => {
                 {s}
                 <Card>
                     {s}
-                    <TierSelector />
+                    <TierSelector
+                        notifyParentOfChange={change => setMinion(change)}
+                    />
                     {s}
+                    <MinionSelector
+                        notifyParentOfChange={change => setTier(change)}
+                    />
+                    {s}
+                    <Button
+                        startIcon={<Delete />}
+                        color="primary"
+                        variant="contained"
+                        classname={classes.button}
+                        onClick={clearData}
+                    >
+                        Clear
+                    </Button>
                     <Button
                         startIcon={<Input />}
                         color="primary"
                         variant="contained"
                         className={classes.button}
+                        onClick={doLogic}
                     >
                         Submit
                     </Button>
+                    {s}
+                    {results}
                     {s}
                 </Card>
             </Paper>

@@ -19,7 +19,10 @@ export default props => {
 
     const [tier, setTier] = React.useState("")
 
-    let handleOnChange = e => setTier(e.target.value)
+    let handleOnChange = e => {
+        setTier(e.target.value)
+        props.notifyParentOfChange(e.target.value)
+    }
 
     return (
         <form autoComplete="off">
