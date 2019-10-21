@@ -18,7 +18,7 @@ export default props => {
     const classes = muiStyles()
 
     return (
-        <div className="explanation">
+        <div>
             <Paper style={CommonPaperStyle}>
                 <BasicExplanation />
                 {s}

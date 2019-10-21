@@ -11,11 +11,8 @@ export default props => {
         root: {
             flexGrow: 1
         },
-        menuButton: {
-            marginRight: theme.spacing(2)
-        },
         title: {
-            flexGrow: 1
+            flexGrow: 0.96
         }
     }))()
 
@@ -30,10 +27,10 @@ export default props => {
                             color: "inherit"
                         }}
                         rel="noopener noreferrer"
+                        alt="Source Code"
                     >
                         <IconButton
                             edge="start"
-                            className={classes.menuButton}
                             color="inherit"
                             aria-label="menu"
                         >
