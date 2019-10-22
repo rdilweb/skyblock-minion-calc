@@ -7,11 +7,11 @@ let woodMinions = {
 
 let machineMinionType = minionName => {
     switch (minionName) {
-        case Minions.birch:
-        case Minions.oak:
-        case Minions.darkoak:
-        case Minions.jungle:
-        case Minions.savannah:
+        case Minions.birch.toString():
+        case Minions.oak.toString():
+        case Minions.darkoak.toString():
+        case Minions.jungle.toString():
+        case Minions.savannah.toString():
             return 2
         default:
             return null
