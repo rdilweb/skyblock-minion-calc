@@ -19,7 +19,8 @@
         "prettier": "prettier --write **/**.{js,html,css,json}",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d build",
-        "deploy-clean": "gh-pages-clean"
+        "deploy-clean": "gh-pages-clean",
+        "docs": "jsdoc **/**.js"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -41,6 +42,7 @@
         "@types/react": "^16.9.9",
         "@types/react-dom": "^16.9.2",
         "gh-pages": "^2.1.1",
+        "jsdoc": "^3.6.3",
         "prettier": "^1.18.2"
     },
     "prettier": {
