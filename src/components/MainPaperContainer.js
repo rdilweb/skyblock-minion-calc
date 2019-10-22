@@ -4,6 +4,7 @@ import CommonPaperStyle from "../styles/PaperStyle"
 import BasicExplanation from "./BasicExplanation"
 import TierSelector from "./selectors/TierSelector"
 import MinionSelector from "./selectors/MinionSelection"
+import ResultHolder from "./ResultHolder"
 import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
@@ -11,6 +12,7 @@ import Input from "@material-ui/icons/Input"
 import Delete from "@material-ui/icons/Delete"
 import Tooltip from "@material-ui/core/Tooltip"
 import { makeStyles } from "@material-ui/core/styles"
+import LogicHandler from "../data/LogicHandler"
 
 export default props => {
     const muiStyles = makeStyles(theme => ({
@@ -20,26 +22,34 @@ export default props => {
     }))
     const s = <br />
     const classes = muiStyles()
-    // eslint-disable-next-line
     const [minion, setMinion] = React.useState("")
-    // eslint-disable-next-line
     const [tier, setTier] = React.useState("")
     const [results, setResults] = React.useState(<div hidden />)
 
     let doLogic = pushable => {
-        setResults(
-            <div>
-                {s}
-                <Typography variant="body2">
-                    Hello! This tool is sadly not done yet. It will work soon
-                    though! Do you know code? You can contribute by clicking the
-                    menu icon on the navigation bar up top!
-                </Typography>
-            </div>
-        )
+        let returnedLogic = LogicHandler(tier, minion)
+        if(!returnedLogic === "") {
+            setResults(
+                <div>
+                    {s}
+                    <ResultHolder itemCount={returnedLogic} />
+                </div>
+            )
+        } else {
+            setResults(
+                <div>
+                    {s}
+                    <Typography variant="body2">
+                        Hello! This tool is sadly not done yet. It will work soon
+                        though! Do you know code? You can contribute by clicking the
+                        menu icon on the navigation bar up top!
+                    </Typography>
+                </div>
+            )
+        }
     }
 
-    // yeah its kind of backwards, but who cares
+    // not actually sure why this boolean works lol
     let canSubmit = !(tier !== "" && minion !== "")
     let clearData = pushable => setResults(<div hidden />)
 

@@ -1,4 +1,3 @@
-import Tiers from "./Tiers"
 import Minions from "./Minions"
 import RomanNumeral from "js-roman-numerals"
 
