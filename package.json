@@ -20,7 +20,7 @@
         "predeploy": "yarn build",
         "deploy": "gh-pages -d build",
         "deploy-clean": "gh-pages-clean",
-        "docs": "jsdoc **/**.js"
+        "docs": "chmod +x ./doctool.sh && ./doctool.sh"
     },
     "eslintConfig": {
         "extends": "react-app"
