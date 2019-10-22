@@ -44,8 +44,9 @@ export default props => {
                     {s}
                     <Typography variant="body2">
                         Hello! This tool is sadly not done yet. It will work
-                        soon though. Do you know JavaScript/React? You can contribute by
-                        clicking the menu icon on the navigation bar up top!
+                        soon though. Do you know JavaScript/React? You can
+                        contribute by clicking the menu icon on the navigation
+                        bar up top!
                     </Typography>
                 </div>
             )
