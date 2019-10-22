@@ -48,3 +48,31 @@ export let farmCommon = {
     X: 204800,
     XI: 409600
 }
+
+export let someMiningStuff = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 1280,
+    VI: 2560,
+    VII: 5120,
+    VIII: 10240,
+    IX: 20480,
+    X: 40960,
+    XI: 81920
+}
+
+export let endermanProgression = {
+    I: 64,
+    II: 128,
+    III: 240,
+    IV: 480,
+    V: 980,
+    VI: 1960,
+    VII: 3920,
+    VIII: 7840,
+    IX: 15680,
+    X: 31360,
+    XI: 62720
+}

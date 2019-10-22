@@ -1,6 +1,12 @@
 import Minions from "./Minions"
 import RomanNumeral from "js-roman-numerals"
-import { woodMinions, combatCommon, farmCommon } from "./Store"
+import {
+    woodMinions,
+    combatCommon,
+    farmCommon,
+    someMiningStuff,
+    endermanProgression
+} from "./Store"
 
 export default (tier, minion) => {
     let e = new RomanNumeral(tier).toString()
@@ -12,11 +18,17 @@ export default (tier, minion) => {
         case Minions.undead.toString():
         case Minions.undeadbones.toString():
         case Minions.magmacube.toString():
+        case Minions.clay.toString():
             return combatCommon[e]
         case Minions.cactus.toString():
         case Minions.desertcane.toString():
         case Minions.potato.toString():
             return farmCommon[e]
+        case Minions.obsidian.toString():
+        case Minions.sand.toString():
+            return someMiningStuff[e]
+        case Minions.enderman.toString():
+            return endermanProgression[e]
         default:
             return ""
     }
