@@ -5,8 +5,8 @@ let woodMinions = {
     I: 80
 }
 
-let machineMinionType = minionName => {
-    switch (minionName) {
+let machineMinionType = n => {
+    switch (n) {
         case Minions.foraging.toString():
             return 2
         default:

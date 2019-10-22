@@ -15,14 +15,13 @@ import { makeStyles } from "@material-ui/core/styles"
 import LogicHandler from "../data/LogicHandler"
 
 export default props => {
-    const muiStyles = makeStyles(theme => ({
+    const classes = makeStyles(theme => ({
         button: {
             margin: theme.spacing(1)
         }
-    }))
+    }))()
 
     const s = <br />
-    const classes = muiStyles()
 
     const [minion, setMinion] = React.useState("")
     const [tier, setTier] = React.useState("")
