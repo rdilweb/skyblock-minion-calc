@@ -5,7 +5,8 @@ import {
     combatCommon,
     farmCommon,
     someMiningStuff,
-    endermanProgression
+    endermanProgression,
+    oresCommon
 } from "./Store"
 
 export default (tier, minion) => {
@@ -29,6 +30,13 @@ export default (tier, minion) => {
             return someMiningStuff[e]
         case Minions.enderman.toString():
             return endermanProgression[e]
+        case Minions.emerald.toString():
+        case Minions.diamond.toString():
+        case Minions.netherquartz.toString():
+        case Minions.iron.toString():
+        case Minions.gold.toString():
+        case Minions.coal.toString():
+            return oresCommon[e]
         default:
             return ""
     }

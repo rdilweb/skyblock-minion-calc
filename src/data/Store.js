@@ -76,3 +76,17 @@ export let endermanProgression = {
     X: 31360,
     XI: 62720
 }
+
+export let oresCommon = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 1280,
+    VI: 3840,
+    VII: 10240,
+    VIII: 20480,
+    IX: 40960,
+    X: 81920,
+    XI: 204800
+}
