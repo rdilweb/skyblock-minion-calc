@@ -32,7 +32,7 @@ export default props => {
         let returnedLogic = LogicHandler(tier, minion)
         // deep checking (===) breaks the if, so shut eslint up
         // eslint-disable-next-line
-        if(!returnedLogic == "") {
+        if (!returnedLogic == "") {
             setResults(
                 <div>
                     {s}
@@ -44,18 +44,20 @@ export default props => {
                 <div>
                     {s}
                     <Typography variant="body2">
-                        Hello! This tool is sadly not done yet. It will work soon
-                        though! Do you know code? You can contribute by clicking the
-                        menu icon on the navigation bar up top!
+                        Hello! This tool is sadly not done yet. It will work
+                        soon though! Do you know code? You can contribute by
+                        clicking the menu icon on the navigation bar up top!
                     </Typography>
                 </div>
             )
         }
     }
 
-    let canSubmit = (tier !== "" && minion !== "")
+    let canSubmit = tier !== "" && minion !== ""
     let clearData = pushable => setResults(<div hidden />)
-    let submitTooltip = canSubmit ? "Calculate cost..." : "Fill out all fields first!"
+    let submitTooltip = canSubmit
+        ? "Calculate cost..."
+        : "Fill out all fields first!"
 
     return (
         <div>

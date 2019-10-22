@@ -5,7 +5,7 @@ import Tiers from "../../data/Tiers"
 import MenuItem from "@material-ui/core/MenuItem"
 
 const listOfTiers = []
-for(const item in Tiers) {
+for (const item in Tiers) {
     let v = Tiers[item].toString()
     listOfTiers.push(<MenuItem value={v}>{v}</MenuItem>)
 }

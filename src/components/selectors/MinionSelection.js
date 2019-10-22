@@ -5,7 +5,7 @@ import Minions from "../../data/Minions"
 import MenuItem from "@material-ui/core/MenuItem"
 
 let listOfMinions = []
-for(const item in Minions) {
+for (const item in Minions) {
     let v = Minions[item].toString()
     listOfMinions.push(<MenuItem value={v}>{v}</MenuItem>)
 }
