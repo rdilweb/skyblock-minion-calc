@@ -11,6 +11,5 @@ export default {
     eight: new RomanNumeral(8),
     nine: new RomanNumeral(9),
     ten: new RomanNumeral(10),
-    eleven: new RomanNumeral(11),
-    twelve: new RomanNumeral(12)
+    eleven: new RomanNumeral(11)
 }
