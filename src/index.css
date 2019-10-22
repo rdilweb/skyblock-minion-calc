@@ -3,12 +3,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Roboto";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: lightgray;
 }
 
 .App {
     text-align: center;
-}
-
-body {
-    background-color: lightgray;
 }
