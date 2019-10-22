@@ -41,9 +41,5 @@ export default {
     blaze: "Blaze",
     netherslime: "Magma Cube",
     fishing: "Fishing",
-    oak: "Oak",
-    birch: "Birch",
-    darkoak: "Dark Oak",
-    savannah: "Acatia",
-    jungle: "Jungle"
+    foraging: "Wood (All Variants)"
 }

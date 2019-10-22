@@ -20,8 +20,10 @@ export default props => {
             margin: theme.spacing(1)
         }
     }))
+
     const s = <br />
     const classes = muiStyles()
+
     const [minion, setMinion] = React.useState("")
     const [tier, setTier] = React.useState("")
     const [results, setResults] = React.useState(<div hidden />)
@@ -51,9 +53,9 @@ export default props => {
         }
     }
 
-    // not actually sure why this boolean works lol
-    let canSubmit = !(tier !== "" && minion !== "")
+    let canSubmit = (tier !== "" && minion !== "")
     let clearData = pushable => setResults(<div hidden />)
+    let submitTooltip = canSubmit ? "Calculate cost..." : "Fill out all fields first!"
 
     return (
         <div>
@@ -70,7 +72,7 @@ export default props => {
                         notifyParentOfChange={change => setMinion(change)}
                     />
                     {s}
-                    <Tooltip title="Hide Result">
+                    <Tooltip title="Hide result">
                         <Button
                             startIcon={<Delete />}
                             color="primary"
@@ -81,7 +83,7 @@ export default props => {
                             Clear
                         </Button>
                     </Tooltip>
-                    <Tooltip title="Calculate Cost...">
+                    <Tooltip title={submitTooltip}>
                         <span>
                             <Button
                                 startIcon={<Input />}
@@ -89,7 +91,7 @@ export default props => {
                                 variant="contained"
                                 className={classes.button}
                                 onClick={doLogic}
-                                disabled={canSubmit}
+                                disabled={!canSubmit}
                             >
                                 Submit
                             </Button>
