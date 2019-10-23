@@ -14,14 +14,30 @@
  * limitations under the License.
  */
 
+import "@testing-library/jest-dom/extend-expect"
 import React from "react"
 import ReactDOM from "react-dom"
+import { render, cleanup } from "@testing-library/react"
 import App from "./App"
 
-describe("general tests via ReactDOM", () => {
-    it("renders without crashing", () => {
+beforeAll(() => {
+    console.error = (...args) => {
+        if (/Warning.*should have a unique "key" prop/.test(args[0])) {
+            return
+        }
+        originalError.call(console, ...args)
+    }
+})
+afterEach(() => cleanup())
+
+describe("general DOM tests", () => {
+    it("renders App component without crashing", () => {
         const div = document.createElement("div")
         ReactDOM.render(<App />, div)
         ReactDOM.unmountComponentAtNode(div)
+    })
+    it("should not display results right after render", () => {
+        const {queryByText} = render(<App />)
+        expect(queryByText("Result")).toBeNull()
     })
 })
