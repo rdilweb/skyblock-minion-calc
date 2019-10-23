@@ -19,12 +19,16 @@ import ReactMarkdown from "react-markdown"
 import Typography from "@material-ui/core/Typography"
 
 export default props => {
-    let template = `## Result\n\nIt will take *${props.itemCount}* items to make that minion.`
+    let base = `## Result\n\nIt will take *${props.itemCount}* raw items to make that minion.`
+    base += props.metaArray[2]
+        ? `\n\n### Enchantments\n\n> In terms of enchanted items, it will cost ${props.itemCount /
+              props.metaArray[0]}.`
+        : ""
 
     return (
         <div>
             <Typography>
-                <ReactMarkdown source={template} />
+                <ReactMarkdown source={base} />
             </Typography>
         </div>
     )

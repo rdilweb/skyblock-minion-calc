@@ -26,6 +26,7 @@ import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
 import Delete from "@material-ui/icons/Delete"
 import Tooltip from "@material-ui/core/Tooltip"
+import { enchantedItemCost } from "../data/Store"
 import { makeStyles } from "@material-ui/core/styles"
 import LogicHandler from "../data/LogicHandler"
 
@@ -42,16 +43,18 @@ export default props => {
     const [tier, setTier] = React.useState("")
     const [results, setResults] = React.useState(<div hidden />)
 
-    let doLogic = pushable => {
-        let returnedLogic = LogicHandler(tier, minion)
-        // deep checking (===) breaks the if, so we mush shut eslint up
+    let doLogic = e => {
+        const returnedLogic = LogicHandler(tier, minion)
         // todo: remove the entire statement after adding all data
         // eslint-disable-next-line
         if (!returnedLogic == "") {
             setResults(
                 <div>
                     {s}
-                    <ResultHolder itemCount={returnedLogic} />
+                    <ResultHolder
+                        itemCount={returnedLogic}
+                        metaArray={enchantedItemCost(tier, minion)}
+                    />
                 </div>
             )
         } else {
@@ -69,7 +72,7 @@ export default props => {
     }
 
     let canSubmit = tier !== "" && minion !== ""
-    let clearData = pushable => setResults(<div hidden />)
+    let clearData = e => setResults(<div hidden />)
     let submitTooltip = canSubmit
         ? "Calculate cost..."
         : "Fill out all fields first!"
