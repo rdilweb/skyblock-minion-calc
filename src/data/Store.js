@@ -28,20 +28,6 @@ export let woodMinions = {
     XI: 81920
 }
 
-export let combatCommon = {
-    I: 80,
-    II: 160,
-    III: 320,
-    IV: 512,
-    V: 1280,
-    VI: 2560,
-    VII: 5120,
-    VIII: 10240,
-    IX: 20480,
-    X: 40960,
-    XI: 81920
-}
-
 export let farmCommon = {
     I: 128,
     II: 256,

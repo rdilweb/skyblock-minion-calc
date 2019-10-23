@@ -58,10 +58,7 @@ export default props => {
                 <div>
                     {s}
                     <Typography variant="body2">
-                        Hello! This tool is sadly not done yet. It will work
-                        soon though. Do you know JavaScript/React? You can
-                        contribute by clicking the menu icon on the navigation
-                        bar up top!
+                       Hello! Sadly, the data for that minion isn't in our storage. Not to worry though! It will be by the end of the week!
                     </Typography>
                 </div>
             )
