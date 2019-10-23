@@ -97,7 +97,7 @@ export default props => {
                             startIcon={<Delete />}
                             color="primary"
                             variant="contained"
-                            classname={classes.button}
+                            className={classes.button}
                             onClick={clearData}
                         >
                             Clear
