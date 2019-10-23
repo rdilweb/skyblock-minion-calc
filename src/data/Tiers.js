@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2019-present Reece Dunham
  *

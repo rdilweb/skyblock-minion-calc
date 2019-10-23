@@ -58,7 +58,9 @@ export default props => {
                 <div>
                     {s}
                     <Typography variant="body2">
-                       Hello! Sadly, the data for that minion isn't in our storage. Not to worry though! It will be by the end of the week!
+                        Hello! Sadly, the data for that minion isn't in our
+                        storage. Not to worry though! It will be by the end of
+                        the week!
                     </Typography>
                 </div>
             )
@@ -73,10 +75,12 @@ export default props => {
 
     return (
         <div>
-            <Paper style={{
-                padding: "40px",
-                margin: "15px"
-            }}>
+            <Paper
+                style={{
+                    padding: "40px",
+                    margin: "15px"
+                }}
+            >
                 <BasicExplanation />
                 {s}
                 <Card>
