@@ -45,6 +45,7 @@ export default props => {
     let doLogic = pushable => {
         let returnedLogic = LogicHandler(tier, minion)
         // deep checking (===) breaks the if, so we mush shut eslint up
+        // todo: remove the entire statement after adding all data
         // eslint-disable-next-line
         if (!returnedLogic == "") {
             setResults(

@@ -19,11 +19,14 @@ import Select from "@material-ui/core/Select"
 import InputLabel from "@material-ui/core/InputLabel"
 import Tiers from "../../data/Tiers"
 import MenuItem from "@material-ui/core/MenuItem"
+import RomanNumeral from "js-roman-numerals"
 
-const listOfTiers = []
+let listOfTiers = []
 for (const item in Tiers) {
     let v = Tiers[item].toString()
-    listOfTiers.push(<MenuItem value={v}>{v}</MenuItem>)
+    listOfTiers.push(
+        <MenuItem value={v}>{v} ({new RomanNumeral(v).toInt()})</MenuItem>
+    )
 }
 
 export default props => {

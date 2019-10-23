@@ -21,7 +21,8 @@ import {
     farmCommon,
     someMiningStuff,
     endermanProgression,
-    oresCommon
+    oresCommon,
+    almostWoodButNotQuite
 } from "./Store"
 
 export default (tier, minion) => {
@@ -34,11 +35,12 @@ export default (tier, minion) => {
         case Minions.undeadbones.toString():
         case Minions.magmacube.toString():
         case Minions.clay.toString():
-        case Minions.chicken.toString():
             return woodMinions[e]
         case Minions.cactus.toString():
         case Minions.desertcane.toString():
         case Minions.potato.toString():
+        case Minions.redstone.toString():
+        case Minions.glowstone.toString():
             return farmCommon[e]
         case Minions.obsidian.toString():
         case Minions.sand.toString():
@@ -55,6 +57,9 @@ export default (tier, minion) => {
         case Minions.slime.toString():
         case Minions.blaze.toString():
             return oresCommon[e]
+        case Minions.chicken.toString():
+        case Minions.netherwart.toString():
+            return almostWoodButNotQuite[e]
         default:
             return ""
     }
