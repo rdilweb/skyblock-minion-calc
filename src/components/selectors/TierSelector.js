@@ -25,7 +25,9 @@ let listOfTiers = []
 for (const item in Tiers) {
     let v = Tiers[item].toString()
     listOfTiers.push(
-        <MenuItem value={v}>{v} ({new RomanNumeral(v).toInt()})</MenuItem>
+        <MenuItem value={v}>
+            {v} ({new RomanNumeral(v).toInt()})
+        </MenuItem>
     )
 }
 

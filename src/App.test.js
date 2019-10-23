@@ -37,7 +37,7 @@ describe("general DOM tests", () => {
         ReactDOM.unmountComponentAtNode(div)
     })
     it("should not display results right after render", () => {
-        const {queryByText} = render(<App />)
+        const { queryByText } = render(<App />)
         expect(queryByText("Result")).toBeNull()
     })
 })
