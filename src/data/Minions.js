@@ -46,7 +46,6 @@ export default {
     netherquartz: "Nether Quartz",
     obsidian: "Obsidian",
     glowstone: "Glowstone",
-    gravel: "Gravel",
     ice: "Ice",
     sand: "Sand",
     endstone: "Endstone",
