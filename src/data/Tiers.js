@@ -16,6 +16,11 @@
 
 import RomanNumeral from "js-roman-numerals"
 
+/**
+ * @default
+ * @description List of the tiers, in RomanNumeral object form
+ * @constant
+ */
 export default {
     one: new RomanNumeral(1),
     two: new RomanNumeral(2),

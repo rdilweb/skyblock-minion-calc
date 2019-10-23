@@ -22,9 +22,18 @@ import {
     someMiningStuff,
     endermanProgression,
     oresCommon,
-    almostWoodButNotQuite
+    almostWoodButNotQuite,
+    pigProgression,
+    ghastProgression
 } from "./Store"
 
+/**
+ * @default
+ * @function
+ * @param tier The tier (in roman numeral string form) to use
+ * @param minion The minion name to use
+ * @todo Finish putting all minions in
+ */
 export default (tier, minion) => {
     let e = new RomanNumeral(tier).toString()
 
@@ -60,6 +69,10 @@ export default (tier, minion) => {
         case Minions.chicken.toString():
         case Minions.netherwart.toString():
             return almostWoodButNotQuite[e]
+        case Minions.pig.toString():
+            return pigProgression[e]
+        case Minions.ghast.toString():
+            return ghastProgression[e]
         default:
             return ""
     }

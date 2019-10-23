@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+/**
+ * @description A list of all the minions
+ * @default
+ * @constant
+ */
 export default {
     cobblestone: "Cobblestone",
     wheat: "Wheat",

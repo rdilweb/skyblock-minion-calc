@@ -15,6 +15,7 @@
  */
 
 /**
+ * @constant
  * Used by minions:
  * - Wood
  * - Magma Cube
@@ -22,6 +23,7 @@
  * - Skeleton
  * - Spider
  * - Clay
+ *
  * Total items required: 163632
  */
 export const woodMinions = {
@@ -39,12 +41,14 @@ export const woodMinions = {
 }
 
 /**
+ * @constant
  * Used by minions:
  * - Cactus
  * - Potato
  * - Sugarcane
  * - Redstone
  * - Glowstone
+ *
  * Total items required: 774016
  */
 export const farmCommon = {
@@ -62,10 +66,12 @@ export const farmCommon = {
 }
 
 /**
+ * @constant
  * Used by minions:
  * - Obsidian
  * - Sand
  * - Cobblestone
+ *
  * Total items required: 163632
  */
 export const someMiningStuff = {
@@ -83,9 +89,12 @@ export const someMiningStuff = {
 }
 
 /**
+ * @constant
  * @description Enderman minions have this really strange progresion
+ *
  * Used by minions:
  * - Enderman
+ *
  * Total items needed: 125372
  */
 export const endermanProgression = {
@@ -103,6 +112,7 @@ export const endermanProgression = {
 }
 
 /**
+ * @constant
  * Used by minions:
  * - Coal
  * - Iron
@@ -112,6 +122,7 @@ export const endermanProgression = {
  * - Slime
  * - Blaze
  * - Nether Quartz
+ *
  * Total items needed: 364592
  */
 export const oresCommon = {
@@ -129,9 +140,11 @@ export const oresCommon = {
 }
 
 /**
+ * @constant
  * Used by minions:
  * - Chicken
  * - Nether Wart
+ *
  * Total items required: 163520
  */
 export const almostWoodButNotQuite = {
@@ -146,4 +159,45 @@ export const almostWoodButNotQuite = {
     IX: 20480,
     X: 40960,
     XI: 81920
+}
+
+/**
+ * @constant
+ * Used by minions:
+ * - Pig
+ * Total items required: 364480
+ */
+export const pigProgression = {
+    I: 64,
+    II: 128,
+    III: 256,
+    IV: 512,
+    V: 1280,
+    VI: 3840,
+    VII: 10240,
+    VIII: 20480,
+    IX: 40960,
+    X: 81920,
+    XI: 204800
+}
+
+/**
+ * @constant
+ * Used by minions:
+ * - Ghast
+ *
+ * Total items required: 128800
+ */
+export const ghastProgression = {
+    I: 64,
+    II: 128,
+    III: 256,
+    IV: 512,
+    V: 1280,
+    VI: 2560,
+    VII: 4000,
+    VIII: 8000,
+    IX: 16000,
+    X: 32000,
+    XI: 64000
 }
