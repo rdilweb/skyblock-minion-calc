@@ -24,7 +24,9 @@ import {
     oresCommon,
     almostWoodButNotQuite,
     pigProgression,
-    ghastProgression
+    ghastProgression,
+    melonProgression,
+    wheatProgression
 } from "./Store"
 
 /**
@@ -73,6 +75,10 @@ export default (tier, minion) => {
             return pigProgression[e]
         case Minions.ghast.toString():
             return ghastProgression[e]
+        case Minions.melon.toString():
+            return melonProgression[e]
+        case Minions.wheat.toString():
+            return wheatProgression[e]
         default:
             return ""
     }

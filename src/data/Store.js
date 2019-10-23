@@ -201,3 +201,45 @@ export const ghastProgression = {
     X: 32000,
     XI: 64000
 }
+
+/**
+ * @constant
+ * Used by minions:
+ * - Melon
+ *
+ * Total items required: 776832
+ */
+export const melonProgression = {
+    I: 256,
+    II: 512,
+    III: 1152,
+    IV: 2304,
+    V: 4608,
+    VI: 10240,
+    VII: 20480,
+    VIII: 40960,
+    IX: 81920,
+    X: 204800,
+    XI: 409600
+}
+
+/**
+ * @constant
+ * Used by minions:
+ * - Wheat
+ *
+ * Total items required: 92368
+ */
+export const wheatProgression = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 864,
+    VI: 1728,
+    VII: 3456,
+    VIII: 4608,
+    IX: 11520,
+    X: 23040,
+    XI: 46080
+}
