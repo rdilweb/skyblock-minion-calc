@@ -72,6 +72,7 @@ export default (tier, minion) => {
         case Minions.netherwart.toString():
             return almostWoodButNotQuite[e]
         case Minions.pig.toString():
+        case Minions.sheep.toString():
             return pigProgression[e]
         case Minions.ghast.toString():
             return ghastProgression[e]

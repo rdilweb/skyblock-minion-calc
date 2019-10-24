@@ -165,6 +165,7 @@ export const almostWoodButNotQuite = {
  * @constant
  * Used by minions:
  * - Pig
+ * - Sheep
  * Total items required: 364480
  */
 export const pigProgression = {
