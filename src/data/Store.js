@@ -264,6 +264,8 @@ export let enchantedItemCost = (tier, minion) => {
         return [20, true, new RomanNumeral(tier).toInt() >= 4]
     } else if (minion == Minions.ghast.toString()) {
         return [5, true, new RomanNumeral(tier).toInt() >= 4]
+    } else if (minion == Minions.spider.toString()) {
+        return [192, true, new RomanNumeral(tier).toInt() >= 4]
     } else {
         return [160, false, new RomanNumeral(tier).toInt() >= 4]
     }
