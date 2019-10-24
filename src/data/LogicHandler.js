@@ -25,7 +25,8 @@ import {
     pigProgression,
     ghastProgression,
     melonProgression,
-    wheatProgression
+    wheatProgression,
+    carrotProgression
 } from "./Store"
 
 /**
@@ -39,45 +40,47 @@ export default (tier, minion) => {
     let e = new RomanNumeral(tier).toString()
 
     switch (minion) {
-        case Minions.foraging.toString():
-        case Minions.spider.toString():
-        case Minions.undead.toString():
-        case Minions.undeadbones.toString():
-        case Minions.magmacube.toString():
-        case Minions.clay.toString():
-        case Minions.obsidian.toString():
-        case Minions.sand.toString():
-        case Minions.cobblestone.toString():
+        case Minions.foraging:
+        case Minions.spider:
+        case Minions.undead:
+        case Minions.undeadbones:
+        case Minions.magmacube:
+        case Minions.clay:
+        case Minions.obsidian:
+        case Minions.sand:
+        case Minions.cobblestone:
             return woodMinions[e]
-        case Minions.cactus.toString():
-        case Minions.desertcane.toString():
-        case Minions.potato.toString():
-        case Minions.redstone.toString():
-        case Minions.glowstone.toString():
+        case Minions.cactus:
+        case Minions.desertcane:
+        case Minions.potato:
+        case Minions.redstone:
+        case Minions.glowstone:
             return farmCommon[e]
-        case Minions.enderman.toString():
+        case Minions.enderman:
             return endermanProgression[e]
-        case Minions.emerald.toString():
-        case Minions.diamond.toString():
-        case Minions.netherquartz.toString():
-        case Minions.iron.toString():
-        case Minions.gold.toString():
-        case Minions.coal.toString():
-        case Minions.slime.toString():
-        case Minions.blaze.toString():
+        case Minions.emerald:
+        case Minions.diamond:
+        case Minions.netherquartz:
+        case Minions.iron:
+        case Minions.gold:
+        case Minions.coal:
+        case Minions.slime:
+        case Minions.blaze:
             return oresCommon[e]
-        case Minions.chicken.toString():
-        case Minions.netherwart.toString():
+        case Minions.chicken:
+        case Minions.netherwart:
             return almostWoodButNotQuite[e]
-        case Minions.pig.toString():
-        case Minions.sheep.toString():
+        case Minions.pig:
+        case Minions.sheep:
             return pigProgression[e]
-        case Minions.ghast.toString():
+        case Minions.ghast:
             return ghastProgression[e]
-        case Minions.melon.toString():
+        case Minions.melon:
             return melonProgression[e]
-        case Minions.wheat.toString():
+        case Minions.wheat:
             return wheatProgression[e]
+        case Minions.carrot:
+            return carrotProgression[e]
         default:
             return ""
     }

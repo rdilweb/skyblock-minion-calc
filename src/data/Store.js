@@ -224,3 +224,24 @@ export const wheatProgression = {
     X: 23040,
     XI: 46080
 }
+
+/**
+ * @constant
+ * Used by minions:
+ * - Carrot
+ *
+ * Total items required: 651904
+ */
+export const carrotProgression = {
+    I: 128,
+    II: 256,
+    III: 512,
+    IV: 1280,
+    V: 3840,
+    VI: 10240,
+    VII: 20480,
+    VIII: 40960,
+    IX: 81920,
+    X: 164096,
+    XI: 328192
+}
