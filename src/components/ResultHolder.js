@@ -22,7 +22,7 @@ export default props => {
     if (props.metaArray[2]) {
         // divide total cost by calculated price per enchanted item
         base +=
-            `\n\n### Enchantments\n\n> In terms of enchanted items, it will cost ${props.itemCount /
+            `\n\n### Enchantments\n\nIn terms of enchanted items, it will cost ${props.itemCount /
                 props.metaArray[0]}.` +
             (props.metaArray[1]
                 ? `\n\n**Warning**: This item has an unusual enchanted item cost, and depending on the item may require more or less of the item to craft the enchanted form!`
