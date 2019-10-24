@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-import Minions from "./Minions"
-import RomanNumeral from "js-roman-numerals"
-
 /**
  * @constant
  * Used by minions:
@@ -245,29 +242,4 @@ export const wheatProgression = {
     IX: 11520,
     X: 23040,
     XI: 46080
-}
-
-/**
- * @description Calculate cost of enchanted item
- * @param tier The tier
- * @param minion The minion's name
- * @see ResultHolder
- * @returns an array with the metadata
- * Returned data:
- * - Index 0: Raw items per enchanted item
- * - Index 1: Different cost then most other enchanted items? (typically false)
- * - Index 2: Tier requires enchanted items (for ResultHolder component)
- */
-export let enchantedItemCost = (tier, minion) => {
-    /* eslint-disable */
-    if (minion == Minions.enderman.toString()) {
-        return [20, true, new RomanNumeral(tier).toInt() >= 4]
-    } else if (minion == Minions.ghast.toString()) {
-        return [5, true, new RomanNumeral(tier).toInt() >= 4]
-    } else if (minion == Minions.spider.toString()) {
-        return [192, true, new RomanNumeral(tier).toInt() >= 4]
-    } else {
-        return [160, false, new RomanNumeral(tier).toInt() >= 4]
-    }
-    /* eslint-enable */
 }

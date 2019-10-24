@@ -26,9 +26,8 @@ import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
 import Delete from "@material-ui/icons/Delete"
 import Tooltip from "@material-ui/core/Tooltip"
-import { enchantedItemCost } from "../data/Store"
 import { makeStyles } from "@material-ui/core/styles"
-import LogicHandler from "../data/LogicHandler"
+import LogicHandler, { enchantedItemCost } from "../data/LogicHandler"
 
 export default props => {
     const classes = makeStyles(theme => ({
@@ -44,16 +43,16 @@ export default props => {
     const [results, setResults] = React.useState(<div hidden />)
 
     let doLogic = e => {
-        const returnedLogic = LogicHandler(tier, minion)
+        const total = LogicHandler(tier, minion)
         // todo: remove the entire statement after adding all data
         // eslint-disable-next-line
-        if (!returnedLogic == "") {
+        if (!total == "") {
             setResults(
                 <div>
                     {s}
                     <ResultHolder
-                        itemCount={returnedLogic}
-                        metaArray={enchantedItemCost(tier, minion)}
+                        itemCount={total}
+                        metaArray={enchantedItemCost(tier, minion, total)}
                     />
                 </div>
             )

@@ -83,3 +83,38 @@ export default (tier, minion) => {
             return ""
     }
 }
+
+/**
+ * @description Calculate cost of enchanted item
+ * @param tier The tier
+ * @param minion The minion's name
+ * @param total The total raw items required for the tier
+ * @see ResultHolder
+ * @returns an array with the metadata
+ *
+ * Returned data:
+ * - Index 0: Raw items per enchanted item
+ * - Index 1: Different cost then most other enchanted items? (typically false)
+ * - Index 2: Tier requires enchanted items (for ResultHolder component)
+ */
+export let enchantedItemCost = (tier, minion, total) => {
+    /* eslint-disable */
+    let l = [0, true, new RomanNumeral(tier).toInt() >= 4 && total % 1 == 0]
+
+    if (minion == Minions.enderman.toString()) {
+        l[0] = 20
+    } else if (minion == Minions.ghast.toString()) {
+        l[0] = 5
+    } else if (
+        minion == Minions.spider.toString() ||
+        minion == Minions.cavespider.toString()
+    ) {
+        l[0] = 192
+    } else {
+        l[0] = 160
+        l[1] = false
+    }
+
+    return l
+    /* eslint-enable */
+}
