@@ -19,9 +19,12 @@ export default props => {
                 <br />
                 If you want, you can
             </Typography>
-            <a href={github + "/issues"} style={{
-                textDecoration: "inherit"
-            }}>
+            <a
+                href={github + "/issues"}
+                style={{
+                    textDecoration: "inherit"
+                }}
+            >
                 <Button
                     variant="contained"
                     startIcon={<BugReport />}
