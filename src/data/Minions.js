@@ -34,7 +34,6 @@ export default {
     pig: "Pig",
     chicken: "Chicken",
     sheep: "Sheep",
-    rabbit: "Rabbit",
     netherwart: "Nether Wart",
     coal: "Coal",
     iron: "Iron",

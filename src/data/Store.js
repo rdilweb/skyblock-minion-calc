@@ -23,6 +23,9 @@
  * - Skeleton
  * - Spider
  * - Clay
+ * - Obsidian
+ * - Sand
+ * - Cobblestone
  *
  * Total items required: 163632
  */
@@ -63,29 +66,6 @@ export const farmCommon = {
     IX: 81920,
     X: 204800,
     XI: 409600
-}
-
-/**
- * @constant
- * Used by minions:
- * - Obsidian
- * - Sand
- * - Cobblestone
- *
- * Total items required: 163632
- */
-export const someMiningStuff = {
-    I: 80,
-    II: 160,
-    III: 320,
-    IV: 512,
-    V: 1280,
-    VI: 2560,
-    VII: 5120,
-    VIII: 10240,
-    IX: 20480,
-    X: 40960,
-    XI: 81920
 }
 
 /**

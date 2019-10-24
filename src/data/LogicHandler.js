@@ -19,7 +19,6 @@ import RomanNumeral from "js-roman-numerals"
 import {
     woodMinions,
     farmCommon,
-    someMiningStuff,
     endermanProgression,
     oresCommon,
     almostWoodButNotQuite,
@@ -46,6 +45,9 @@ export default (tier, minion) => {
         case Minions.undeadbones.toString():
         case Minions.magmacube.toString():
         case Minions.clay.toString():
+        case Minions.obsidian.toString():
+        case Minions.sand.toString():
+        case Minions.cobblestone.toString():
             return woodMinions[e]
         case Minions.cactus.toString():
         case Minions.desertcane.toString():
@@ -53,10 +55,6 @@ export default (tier, minion) => {
         case Minions.redstone.toString():
         case Minions.glowstone.toString():
             return farmCommon[e]
-        case Minions.obsidian.toString():
-        case Minions.sand.toString():
-        case Minions.cobblestone.toString():
-            return someMiningStuff[e]
         case Minions.enderman.toString():
             return endermanProgression[e]
         case Minions.emerald.toString():
