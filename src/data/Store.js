@@ -26,6 +26,7 @@
  * - Obsidian
  * - Sand
  * - Cobblestone
+ * - Mushroom
  *
  * Total items required: 163632
  */

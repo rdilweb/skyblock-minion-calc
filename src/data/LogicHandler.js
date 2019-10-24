@@ -52,6 +52,7 @@ export default (tier, minion) => {
         case Minions.obsidian:
         case Minions.sand:
         case Minions.cobblestone:
+        case Minions.mushroom:
             return woodMinions[e]
         case Minions.cactus:
         case Minions.desertcane:
@@ -87,12 +88,16 @@ export default (tier, minion) => {
         case Minions.cow:
             return (
                 // eslint-disable-next-line
-                e != "XI"
-                    ? cowProgression[e]
-                    : <ErrorHolder message="Cows require leather for tier 11, and the data for that isn't in this calculator sadly" />
+                e != "XI" ? (
+                    cowProgression[e]
+                ) : (
+                    <ErrorHolder message="Cows require leather for tier 11, and the data for that isn't in this calculator sadly" />
+                )
             )
         default:
-            return <ErrorHolder message="We don't have the data for this minion yet, but don't worry, it will be here soon" />
+            return (
+                <ErrorHolder message="We don't have the data for this minion yet, but don't worry, it will be here soon" />
+            )
     }
 }
 

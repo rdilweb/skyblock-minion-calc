@@ -22,6 +22,8 @@ import Typography from "@material-ui/core/Typography"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 
+export const github = "https://github.com/RDIL/skyblock-minion-calc"
+
 export default props => {
     const classes = makeStyles(theme => ({
         title: {
@@ -34,7 +36,7 @@ export default props => {
             <AppBar position="static">
                 <Toolbar>
                     <a
-                        href="https://github.com/RDIL/skyblock-minion-calc"
+                        href={github}
                         target="_blank"
                         style={{
                             color: "inherit"

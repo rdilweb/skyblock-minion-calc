@@ -29,13 +29,12 @@ import { makeStyles } from "@material-ui/core/styles"
 import LogicHandler, { enchantedItemCost } from "../data/LogicHandler"
 
 export default props => {
+    const s = <br />
     const classes = makeStyles(theme => ({
         button: {
             margin: theme.spacing(1)
         }
     }))()
-
-    const s = <br />
 
     const [minion, setMinion] = React.useState("")
     const [tier, setTier] = React.useState("")
@@ -45,7 +44,7 @@ export default props => {
     let doLogic = e => {
         const total = LogicHandler(tier, minion)
         // todo: remove the entire statement after adding all data
-        if(typeof total != "number") {
+        if (typeof total != "number") {
             // it isn't an int, so its JSX
             setResults(
                 <div>
