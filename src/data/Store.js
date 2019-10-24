@@ -245,3 +245,26 @@ export const carrotProgression = {
     X: 164096,
     XI: 328192
 }
+
+/**
+ * @constant
+ * Used by minions:
+ * - Cow
+ *
+ * Total items required: 159680
+ *
+ * @throws Exception because this is the only progression without a XI key!
+ * @description Use with caution!
+ */
+export const cowProgression = {
+    I: 64,
+    II: 128,
+    III: 256,
+    IV: 512,
+    V: 1280,
+    VI: 3840,
+    VII: 10240,
+    VIII: 20480,
+    IX: 40960,
+    X: 81920
+}

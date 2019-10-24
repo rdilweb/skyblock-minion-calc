@@ -20,7 +20,6 @@ import BasicExplanation from "./BasicExplanation"
 import TierSelector from "./selectors/TierSelector"
 import MinionSelector from "./selectors/MinionSelection"
 import ResultHolder from "./ResultHolder"
-import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
@@ -42,11 +41,19 @@ export default props => {
     const [tier, setTier] = React.useState("")
     const [results, setResults] = React.useState(<div hidden />)
 
+    /* eslint-disable */
     let doLogic = e => {
         const total = LogicHandler(tier, minion)
         // todo: remove the entire statement after adding all data
-        // eslint-disable-next-line
-        if (!total == "") {
+        if(typeof total != "number") {
+            // it isn't an int, so its JSX
+            setResults(
+                <div>
+                    {s}
+                    {total}
+                </div>
+            )
+        } else {
             setResults(
                 <div>
                     {s}
@@ -56,19 +63,9 @@ export default props => {
                     />
                 </div>
             )
-        } else {
-            setResults(
-                <div>
-                    {s}
-                    <Typography variant="body2">
-                        Hello! Sadly, the data for that minion isn't in our
-                        storage. Not to worry though! It will be by the end of
-                        the week!
-                    </Typography>
-                </div>
-            )
         }
     }
+    /* eslint-enable */
 
     let canSubmit = tier !== "" && minion !== ""
     let clearData = e => setResults(<div hidden />)

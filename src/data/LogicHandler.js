@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+import React from "react"
 import Minions from "./Minions"
 import RomanNumeral from "js-roman-numerals"
+import ErrorHolder from "../components/ErrorHolder"
 import {
     woodMinions,
     farmCommon,
@@ -26,7 +28,8 @@ import {
     ghastProgression,
     melonProgression,
     wheatProgression,
-    carrotProgression
+    carrotProgression,
+    cowProgression
 } from "./Store"
 
 /**
@@ -81,8 +84,15 @@ export default (tier, minion) => {
             return wheatProgression[e]
         case Minions.carrot:
             return carrotProgression[e]
+        case Minions.cow:
+            return (
+                // eslint-disable-next-line
+                e != "XI"
+                    ? cowProgression[e]
+                    : <ErrorHolder message="Cows require leather for tier 11, and the data for that isn't in this calculator sadly" />
+            )
         default:
-            return ""
+            return <ErrorHolder message="We don't have the data for this minion yet, but don't worry, it will be here soon" />
     }
 }
 
