@@ -18,6 +18,7 @@
  * @description A list of all the minions
  * @default
  * @constant
+ * @returns the object with all the minions
  */
 export default {
     cobblestone: "Cobblestone",
@@ -27,7 +28,7 @@ export default {
     pumpkin: "Pumpkin",
     melon: "Melon",
     mushroom: "Mushroom",
-    cocoabean: "Cocoa Bean",
+    bean: "Cocoa Bean",
     cactus: "Cactus",
     desertcane: "Sugarcane",
     cow: "Cow",

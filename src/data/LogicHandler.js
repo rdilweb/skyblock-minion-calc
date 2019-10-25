@@ -29,7 +29,10 @@ import {
     melonProgression,
     wheatProgression,
     carrotProgression,
-    cowProgression
+    cowProgression,
+    beanProgression,
+    lapisProgression,
+    iceProgression
 } from "./Store"
 
 /**
@@ -38,6 +41,7 @@ import {
  * @param tier The tier (in roman numeral string form) to use
  * @param minion The minion name to use
  * @todo Finish putting all minions in
+ * @returns either the ErrorHolder or the data
  */
 export default (tier, minion) => {
     let e = new RomanNumeral(tier).toString()
@@ -94,6 +98,12 @@ export default (tier, minion) => {
                     <ErrorHolder message="Cows require leather for tier 11, and the data for that isn't in this calculator sadly" />
                 )
             )
+        case Minions.bean:
+            return beanProgression[e]
+        case Minions.lapislazuli:
+            return lapisProgression[e]
+        case Minions.ice:
+            return iceProgression[e]
         default:
             return (
                 <ErrorHolder message="We don't have the data for this minion yet, but don't worry, it will be here soon" />
@@ -118,15 +128,14 @@ export let enchantedItemCost = (tier, minion, total) => {
     /* eslint-disable */
     let l = [0, true, new RomanNumeral(tier).toInt() >= 4 && total % 1 == 0]
 
-    if (minion == Minions.enderman.toString()) {
+    if (minion == Minions.enderman) {
         l[0] = 20
-    } else if (minion == Minions.ghast.toString()) {
+    } else if (minion == Minions.ghast) {
         l[0] = 5
-    } else if (
-        minion == Minions.spider.toString() ||
-        minion == Minions.cavespider.toString()
-    ) {
+    } else if (minion == Minions.spider || minion == Minions.cavespider) {
         l[0] = 192
+    } else if (minion == Minions.ice) {
+        l[2] = false
     } else {
         l[0] = 160
         l[1] = false

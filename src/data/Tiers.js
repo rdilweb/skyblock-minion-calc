@@ -20,6 +20,7 @@ import RomanNumeral from "js-roman-numerals"
  * @default
  * @description List of the tiers, in RomanNumeral object form
  * @constant
+ * @returns the Object containing the tiers
  */
 export default {
     one: new RomanNumeral(1),

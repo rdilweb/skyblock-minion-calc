@@ -16,6 +16,7 @@
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Wood
  * - Magma Cube
@@ -46,6 +47,7 @@ export const woodMinions = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Cactus
  * - Potato
@@ -72,6 +74,7 @@ export const farmCommon = {
 /**
  * @constant
  * @description Enderman minions have this really strange progresion
+ * @returns the object with the tier data
  *
  * Used by minions:
  * - Enderman
@@ -94,6 +97,7 @@ export const endermanProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Coal
  * - Iron
@@ -122,6 +126,7 @@ export const oresCommon = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Chicken
  * - Nether Wart
@@ -144,6 +149,7 @@ export const almostWoodButNotQuite = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Pig
  * - Sheep
@@ -165,6 +171,7 @@ export const pigProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Ghast
  *
@@ -186,6 +193,7 @@ export const ghastProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Melon
  *
@@ -207,6 +215,7 @@ export const melonProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Wheat
  *
@@ -228,6 +237,7 @@ export const wheatProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Carrot
  *
@@ -249,6 +259,7 @@ export const carrotProgression = {
 
 /**
  * @constant
+ * @returns the object with the tier data
  * Used by minions:
  * - Cow
  *
@@ -268,4 +279,70 @@ export const cowProgression = {
     VIII: 20480,
     IX: 40960,
     X: 81920
+}
+
+/**
+ * @constant
+ * @returns the object with the tier data
+ * Used by minions:
+ * - Cocoa Bean
+ *
+ * Total items required: 323632
+ */
+export const beanProgression = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 1280,
+    VI: 3840,
+    VII: 10240,
+    VIII: 20480,
+    IX: 40960,
+    X: 81920,
+    XI: 163840
+}
+
+/**
+ * @constant
+ * @returns the object with the tier data
+ * Used by minions:
+ * - Lapis Lazuli
+ *
+ * Total items required: 1593088
+ */
+export const lapisProgression = {
+    I: 256,
+    II: 512,
+    III: 1280,
+    IV: 3840,
+    V: 10240,
+    VI: 20480,
+    VII: 40960,
+    VIII: 81920,
+    IX: 204800,
+    X: 409600,
+    XI: 819200
+}
+
+/**
+ * @constant
+ * @returns the object with the tier data
+ * Used by minions:
+ * - Ice
+ *
+ * Total items required: 162736
+ */
+export const iceProgression = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 1152,
+    VI: 2304,
+    VII: 4608,
+    VIII: 10240,
+    IX: 20480,
+    X: 40960,
+    XI: 81920
 }
