@@ -32,13 +32,14 @@ import {
     cowProgression,
     beanProgression,
     lapisProgression,
-    iceProgression
+    iceProgression,
+    combat2
 } from "./Store"
 
 /**
  * @default
  * @function
- * @param tier The tier (in roman numeral string form) to use
+ * @param tier The tier (in roman numeral form) to use
  * @param minion The minion name to use
  * @todo Finish putting all minions in
  * @returns either the ErrorHolder or the data
@@ -64,8 +65,6 @@ export default (tier, minion) => {
         case Minions.redstone:
         case Minions.glowstone:
             return farmCommon[e]
-        case Minions.enderman:
-            return endermanProgression[e]
         case Minions.emerald:
         case Minions.diamond:
         case Minions.netherquartz:
@@ -75,12 +74,17 @@ export default (tier, minion) => {
         case Minions.slime:
         case Minions.blaze:
             return oresCommon[e]
+        case Minions.creeper:
+        case Minions.cavespider:
+            return combat2[e]
         case Minions.chicken:
         case Minions.netherwart:
             return almostWoodButNotQuite[e]
         case Minions.pig:
         case Minions.sheep:
             return pigProgression[e]
+        case Minions.enderman:
+            return endermanProgression[e]
         case Minions.ghast:
             return ghastProgression[e]
         case Minions.melon:
@@ -95,7 +99,7 @@ export default (tier, minion) => {
                 e != "XI" ? (
                     cowProgression[e]
                 ) : (
-                    <ErrorHolder message="Cows require leather for tier 11, and the data for that isn't in this calculator sadly" />
+                    <ErrorHolder message="Cows need leather for tier 11, and this calculator can't handle two items right now" />
                 )
             )
         case Minions.bean:
@@ -106,7 +110,7 @@ export default (tier, minion) => {
             return iceProgression[e]
         default:
             return (
-                <ErrorHolder message="We don't have the data for this minion yet, but don't worry, it will be here soon" />
+                <ErrorHolder message="We don't have the data for this minion yet, but don't worry, we will soon" />
             )
     }
 }
@@ -118,6 +122,7 @@ export default (tier, minion) => {
  * @param total The total raw items required for the tier
  * @see ResultHolder
  * @returns an array with the metadata
+ * @todo handle bundled items
  *
  * Returned data:
  * - Index 0: Raw items per enchanted item
@@ -126,7 +131,13 @@ export default (tier, minion) => {
  */
 export let enchantedItemCost = (tier, minion, total) => {
     /* eslint-disable */
-    let l = [0, true, new RomanNumeral(tier).toInt() >= 4 && total % 1 == 0]
+    const tierInt = new RomanNumeral(tier).toInt()
+    let l = [
+        0,
+        true,
+        // tier is bigger then 4
+        tierInt >= 4
+    ]
 
     if (minion == Minions.enderman) {
         l[0] = 20
@@ -134,7 +145,12 @@ export let enchantedItemCost = (tier, minion, total) => {
         l[0] = 5
     } else if (minion == Minions.spider || minion == Minions.cavespider) {
         l[0] = 192
-    } else if (minion == Minions.ice) {
+    } else if (minion == Minions.ice || minion == Minions.wheat) {
+        l[2] = false
+    } else if (
+        (minion == Minions.creeper || minion == Minions.cavespider) &&
+        tierInt == 11
+    ) {
         l[2] = false
     } else {
         l[0] = 160

@@ -346,3 +346,26 @@ export const iceProgression = {
     X: 40960,
     XI: 81920
 }
+
+/**
+ * @constant
+ * @returns the object with the tier data
+ * Used by minions:
+ * - Creeper
+ * - Cave Spider (Partially)
+ *
+ * Total items required: 323632
+ */
+export const combat2 = {
+    I: 80,
+    II: 160,
+    III: 320,
+    IV: 512,
+    V: 1280,
+    VI: 3840,
+    VII: 10240,
+    VIII: 20480,
+    IX: 40960,
+    X: 81920,
+    XI: 163840
+}
