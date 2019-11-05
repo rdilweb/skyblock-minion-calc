@@ -17,7 +17,7 @@
 import React from "react"
 import Minions from "./Minions"
 import RomanNumeral from "js-roman-numerals"
-import ErrorHolder from "../components/ErrorHolder"
+import ErrorHolder from "../components/holders/ErrorHolder"
 import {
     woodMinions,
     farmCommon,
@@ -35,16 +35,16 @@ import {
     iceProgression,
     combat2
 } from "./Store"
+import { isJsxOrFunc } from "./Common"
 
 /**
- * @default
  * @function
  * @param tier The tier (in roman numeral form) to use
  * @param minion The minion name to use
  * @todo Finish putting all minions in
- * @returns either the ErrorHolder or the data
+ * @returns either the ErrorHolder or the cost data
  */
-export default (tier, minion) => {
+let cost = (tier, minion) => {
     let e = new RomanNumeral(tier).toString()
 
     switch (minion) {
@@ -106,20 +106,25 @@ export default (tier, minion) => {
             return beanProgression[e]
         case Minions.lapislazuli:
             return lapisProgression[e]
-        case Minions.ice:
-            return iceProgression[e]
+        //case Minions.ice:
+        //    return iceProgression[e]
         default:
             return (
-                <ErrorHolder message="We don't have the data for this minion yet, but don't worry, we will soon" />
+                <ErrorHolder
+                    message="We don't have the data for this minion yet, but don't worry, we will soon"
+                    showReportButton={true}
+                />
             )
     }
 }
 
 /**
- * @description Calculate cost of enchanted item
+ * @function
+ * @default
+ * @description Get the array of data for the result
  * @param tier The tier
  * @param minion The minion's name
- * @param total The total raw items required for the tier
+ * @param totalForSelectedTier The total raw items required for the tier
  * @see ResultHolder
  * @returns an array with the metadata
  * @todo handle bundled items
@@ -128,15 +133,29 @@ export default (tier, minion) => {
  * - Index 0: Raw items per enchanted item
  * - Index 1: Different cost then most other enchanted items? (typically false)
  * - Index 2: Tier requires enchanted items (for ResultHolder component)
+ * - Index 3: Show previous tiers
+ * - Index 4: Current tier data (nullable!)
+ * - Index 5: Cost (either JSX component or int)
  */
-export let enchantedItemCost = (tier, minion, total) => {
+let metaArray = (tier, minion) => {
+    // it seems eslint thinks of this as a shitshow
+    // so outta here eslint
     /* eslint-disable */
+    const x = cost(tier, minion)
     const tierInt = new RomanNumeral(tier).toInt()
     let l = [
+        // raw items per enchanted item
         0,
+        // different cost then normal enchanted items?
         true,
-        // tier is bigger then 4
-        tierInt >= 4
+        // show enchanted item cost?
+        tierInt >= 4,
+        // show previous tier data?
+        tierInt < 2 && !isJsxOrFunc(x),
+        // previous tier data
+        null,
+        // raw item cost
+        x
     ]
 
     if (minion == Minions.enderman) {
@@ -157,6 +176,18 @@ export let enchantedItemCost = (tier, minion, total) => {
         l[1] = false
     }
 
+    // previous tier data is...
+    // todo: make into mini version of existing result holder
+    if (l[3]) {
+        let z = 0
+        for (let p = 0; p < tierInt - 1; p++) {
+            z += x
+        }
+        l[3] = z
+    }
+
     return l
     /* eslint-enable */
 }
+
+export default metaArray

@@ -19,6 +19,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { render, cleanup } from "@testing-library/react"
 import App from "./App"
+import RomanNumeral from "js-roman-numerals"
 
 beforeAll(() => {
     console.error = (...args) => {
@@ -28,6 +29,7 @@ beforeAll(() => {
         originalError.call(console, ...args)
     }
 })
+
 afterEach(() => cleanup())
 
 describe("general DOM tests", () => {
@@ -39,5 +41,48 @@ describe("general DOM tests", () => {
     it("should not display results right after render", () => {
         const { queryByText } = render(<App />)
         expect(queryByText("Result")).toBeNull()
+    })
+})
+
+describe("storage tests", () => {
+    it("can build a storage object with dummy values", () => {
+        // build object
+        const o = require("./data/Store").buildProgressionData(
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        )
+        expect(Object.keys(o)).not.toBeNull()
+    })
+})
+
+describe("roman numerals library tests", () => {
+    it("can convert numbers to their proper roman numeral strings", () => {
+        const first = new RomanNumeral(4).toString()
+        const second = new RomanNumeral(11).toString()
+        const third = new RomanNumeral(8).toString()
+        const forth = new RomanNumeral(2).toString()
+        expect(first).toBe("IV")
+        expect(second).toBe("XI")
+        expect(third).toBe("VIII")
+        expect(forth).toBe("II")
+    })
+    it("can convert roman numerals to there proper number forms", () => {
+        const first = new RomanNumeral("V").toInt()
+        const second = new RomanNumeral("VII").toInt()
+        const third = new RomanNumeral("III").toInt()
+        const forth = new RomanNumeral("I").toInt()
+        expect(first).toBe(5)
+        expect(second).toBe(7)
+        expect(third).toBe(3)
+        expect(forth).toBe(1)
     })
 })

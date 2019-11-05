@@ -17,16 +17,17 @@
 import React from "react"
 import Paper from "@material-ui/core/Paper"
 import BasicExplanation from "./BasicExplanation"
+import AuthorCard from "./AuthorCard"
 import TierSelector from "./selectors/TierSelector"
 import MinionSelector from "./selectors/MinionSelection"
-import ResultHolder from "./ResultHolder"
+import ResultHolder from "./holders/ResultHolder"
 import Card from "@material-ui/core/Card"
 import Button from "@material-ui/core/Button"
 import Input from "@material-ui/icons/Input"
 import Delete from "@material-ui/icons/Delete"
 import Tooltip from "@material-ui/core/Tooltip"
 import { makeStyles } from "@material-ui/core/styles"
-import LogicHandler, { enchantedItemCost } from "../data/LogicHandler"
+import LogicHandler from "../data/LogicHandler"
 
 export default props => {
     const s = <br />
@@ -42,24 +43,20 @@ export default props => {
 
     /* eslint-disable */
     let doLogic = e => {
-        const total = LogicHandler(tier, minion)
-        // todo: remove the entire statement after adding all data
-        if (typeof total != "number") {
-            // it isn't an int, so its JSX
+        const meta = LogicHandler(tier, minion)
+        if (typeof meta[5] != "number") {
+            // the raw item count isn't a number, so its JSX
             setResults(
                 <div>
                     {s}
-                    {total}
+                    {meta[5]}
                 </div>
             )
         } else {
             setResults(
                 <div>
                     {s}
-                    <ResultHolder
-                        itemCount={total}
-                        metaArray={enchantedItemCost(tier, minion, total)}
-                    />
+                    <ResultHolder meta={meta} />
                 </div>
             )
         }
@@ -120,7 +117,10 @@ export default props => {
                     {s}
                     {results}
                     {s}
+                    {s}
+                    <AuthorCard />
                 </Card>
+                {s}
             </Paper>
         </div>
     )
