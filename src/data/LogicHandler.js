@@ -106,8 +106,8 @@ let cost = (tier, minion) => {
             return beanProgression[e]
         case Minions.lapislazuli:
             return lapisProgression[e]
-        //case Minions.ice:
-        //    return iceProgression[e]
+        case Minions.ice:
+            return iceProgression[e]
         default:
             return (
                 <ErrorHolder
@@ -124,7 +124,6 @@ let cost = (tier, minion) => {
  * @description Get the array of data for the result
  * @param tier The tier
  * @param minion The minion's name
- * @param totalForSelectedTier The total raw items required for the tier
  * @see ResultHolder
  * @returns an array with the metadata
  * @todo handle bundled items
