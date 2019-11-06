@@ -1377,6 +1377,11 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
+"@types/js-roman-numerals@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/js-roman-numerals/-/js-roman-numerals-1.1.0.tgz#986937720766c0a6d3bfb4a97fde8421a7049460"
+  integrity sha512-l1ZneBaVAUwK2zx+vKVT+aLhcFoBadP8xWq7d5dsSqcxYTDVpSpZ/iBVLZrtdpXafMW3q/w1QDA7UQHq8E4txw==
+
 "@types/json-schema@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
