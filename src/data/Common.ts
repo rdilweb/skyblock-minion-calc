@@ -23,6 +23,7 @@ import { isFunction } from "underscore"
  * @param pushable The object to check
  */
 export let isJsxOrFunc = (pushable: Object | Function | null | undefined) => {
+    // eslint-disable-next-line
     if (pushable == null || pushable == undefined) {
         return false
     }
