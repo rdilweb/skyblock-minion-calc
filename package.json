@@ -11,7 +11,7 @@
         "react-markdown": "^4.3.0",
         "react-scripts": "3.3.0",
         "typescript": "^3.7.4",
-        "underscore": "^1.9.1",
+        "underscore": "^1.9.2",
         "webfontloader": "^1.6.28"
     },
     "scripts": {
