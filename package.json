@@ -39,7 +39,7 @@
         ]
     },
     "devDependencies": {
-        "@testing-library/jest-dom": "^5.0.1",
+        "@testing-library/jest-dom": "^5.0.2",
         "@testing-library/react": "^9.4.0",
         "@types/js-roman-numerals": "^1.1.0",
         "@types/node": "^13.1.8",
