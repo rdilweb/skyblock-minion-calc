@@ -2,6 +2,8 @@
 
 This is a simple website that allows you to check how many of a certain item it will cost to upgrade your minion to a certain tier.
 
+> ***WARNING***: This is deprecated in favor of tools I think are better.
+
 ----
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

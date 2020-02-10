@@ -54,14 +54,13 @@
         "semi": false,
         "tabWidth": 4
     },
-    "homepage": "https://skyblock-minions.rdil.rocks",
     "author": "Reece Dunham",
     "license": "Apache 2",
     "repository": {
         "type": "git",
-        "url": "https://github.com/RDIL/skyblock-minion-calc.git"
+        "url": "https://github.com/rdilweb/skyblock-minion-calc.git"
     },
     "bugs": {
-        "url": "https://github.com/RDIL/skyblock-minion-calc/issues"
+        "url": "https://github.com/rdilweb/skyblock-minion-calc/issues"
     }
 }
